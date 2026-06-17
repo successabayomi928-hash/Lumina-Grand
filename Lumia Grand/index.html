@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Grand Hotel | Luxury Redefined</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <a href="#" class="logo">
+            <i class="fas fa-gem"></i>
+            Lumina Grand
+        </a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li class="dropdown">
+                <a href="#services">Services <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="#room-service">Room Service</a></li>
+                    <li><a href="#spa-wellness">Spa & Wellness</a></li>
+                    <li><a href="#fine-dining">Fine Dining</a></li>
+                    <li><a href="#events-weddings">Events & Weddings</a></li>
+                    <li><a href="#business-center">Business Center</a></li>
+                </ul>
+            </li>
+            <li><a href="#rooms">Rooms</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#rooms" class="nav-cta">Book Now</a></li>
+        </ul>
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <span class="hero-subtitle">Welcome to Luxury</span>
+            <h1>Experience Unparalleled Elegance</h1>
+            <p>Discover a world of refined luxury where every detail is crafted to perfection. Your unforgettable stay begins here.</p>
+            <div class="hero-buttons">
+                <a href="#rooms" id="bookStayBtn" class="btn btn-primary book-stay-btn">
+                    <i class="fas fa-calendar-check"></i>
+                    Book Your Stay
+                </a>
+                <a href="#about" class="btn btn-outline">
+                    <i class="fas fa-play-circle"></i>
+                    Explore More
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Bar -->
+    <div class="booking-bar">
+        <div class="booking-field">
+            <label><i class="fas fa-calendar-alt"></i> Check-in</label>
+            <input type="date" id="checkin">
+        </div>
+        <div class="booking-field">
+            <label><i class="fas fa-calendar-alt"></i> Check-out</label>
+            <input type="date" id="checkout">
+        </div>
+        <div class="booking-field">
+            <label><i class="fas fa-user-friends"></i> Guests</label>
+            <select id="guests">
+                <option value="1">1 Guest</option>
+                <option value="2" selected>2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="5">5+ Guests</option>
+            </select>
+        </div>
+        <div class="booking-field">
+            <label><i class="fas fa-bed"></i> Room Type</label>
+            <select id="roomType">
+                <option value="all">All Rooms</option>
+                <option value="deluxe">Deluxe Suite</option>
+                <option value="premium">Premium Suite</option>
+                <option value="presidential">Presidential Suite</option>
+            </select>
+        </div>
+        <button class="booking-btn" onclick="searchRooms()">
+            <i class="fas fa-search"></i> Check Availability
+        </button>
+    </div>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-grid reveal">
+            <div class="about-images">
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hotel Lobby">
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Pool">
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Restaurant">
+                </div>
+            </div>
+            <div class="about-content">
+                <div class="gold-line" style="margin: 0 0 20px 0;"></div>
+                <h3>A Legacy of Luxury Since 1995</h3>
+                <p>Welcome to Lumina Grand Hotel, where timeless elegance meets modern sophistication. Nestled in the heart of the city, our hotel offers an unparalleled experience of comfort and luxury.</p>
+                <p>With over 25 years of excellence, we have perfected the art of hospitality. Our dedicated team ensures every guest receives personalized attention, making each stay truly memorable.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h4>150+</h4>
+                        <span>Luxury Rooms</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>25+</h4>
+                        <span>Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <h4>50K+</h4>
+                        <span>Happy Guests</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section class="rooms" id="rooms">
+        <div class="section-header reveal">
+            <div class="gold-line"></div>
+            <h2>Our Premium Rooms</h2>
+            <p>Choose from our carefully curated selection of rooms and suites, each designed to provide the ultimate comfort and luxury experience.</p>
+        </div>
+        <div class="rooms-grid">
+            <div class="room-card reveal">
+                <div class="room-img">
+                    <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Deluxe Room">
+                    <span class="room-badge">Popular</span>
+                </div>
+                <div class="room-info">
+                    <h3>Deluxe Suite</h3>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Elegant room with city views, king-size bed, and modern amenities for a comfortable stay.</p>
+                    <div class="room-features">
+                        <span><i class="fas fa-bed"></i> King Bed</span>
+                        <span><i class="fas fa-ruler-combined"></i> 45 m²</span>
+                        <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                    </div>
+                    <div class="room-price">
+                        <div class="price">$299<span>/night</span></div>
+                        <button class="book-room-btn" onclick="openBookingModal('Deluxe Suite', 299)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card reveal">
+                <div class="room-img">
+                    <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Premium Room">
+                    <span class="room-badge" style="background: var(--gold);">Best Value</span>
+                </div>
+                <div class="room-info">
+                    <h3>Premium Suite</h3>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Spacious suite with panoramic views, separate living area, and premium furnishings.</p>
+                    <div class="room-features">
+                        <span><i class="fas fa-bed"></i> King Bed</span>
+                        <span><i class="fas fa-ruler-combined"></i> 65 m²</span>
+                        <span><i class="fas fa-hot-tub"></i> Jacuzzi</span>
+                    </div>
+                    <div class="room-price">
+                        <div class="price">$499<span>/night</span></div>
+                        <button class="book-room-btn" onclick="openBookingModal('Premium Suite', 499)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card reveal">
+                <div class="room-img">
+                    <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Presidential Room">
+                    <span class="room-badge" style="background: var(--primary);">Luxury</span>
+                </div>
+                <div class="room-info">
+                    <h3>Presidential Suite</h3>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">The epitome of luxury with private terrace, butler service, and breathtaking ocean views.</p>
+                    <div class="room-features">
+                        <span><i class="fas fa-bed"></i> King Bed</span>
+                        <span><i class="fas fa-ruler-combined"></i> 120 m²</span>
+                        <span><i class="fas fa-concierge-bell"></i> Butler</span>
+                    </div>
+                    <div class="room-price">
+                        <div class="price">$999<span>/night</span></div>
+                        <button class="book-room-btn" onclick="openBookingModal('Presidential Suite', 999)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card reveal">
+                <div class="room-img">
+                    <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Executive Suite">
+                    <span class="room-badge" style="background: #c9a96e;">Executive</span>
+                </div>
+                <div class="room-info">
+                    <h3>Executive Suite</h3>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">A refined suite with separate work space, luxurious seating, and executive amenities.</p>
+                    <div class="room-features">
+                        <span><i class="fas fa-briefcase"></i> Work Desk</span>
+                        <span><i class="fas fa-ruler-combined"></i> 70 m²</span>
+                        <span><i class="fas fa-coffee"></i> Espresso Bar</span>
+                    </div>
+                    <div class="room-price">
+                        <div class="price">$379<span>/night</span></div>
+                        <button class="book-room-btn" onclick="openBookingModal('Executive Suite', 379)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card reveal">
+                <div class="room-img">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Junior Suite">
+                    <span class="room-badge" style="background: #1a1a2e;">Cozy</span>
+                </div>
+                <div class="room-info">
+                    <h3>Junior Suite</h3>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Comfortable suite with plush bedding, elegant decor, and scenic city views.</p>
+                    <div class="room-features">
+                        <span><i class="fas fa-bed"></i> Queen Bed</span>
+                        <span><i class="fas fa-ruler-combined"></i> 55 m²</span>
+                        <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                    </div>
+                    <div class="room-price">
+                        <div class="price">$329<span>/night</span></div>
+                        <button class="book-room-btn" onclick="openBookingModal('Junior Suite', 329)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card reveal">
+                <div class="room-img">
+                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Family Suite">
+                    <span class="room-badge" style="background: #e94560;">Family</span>
+                </div>
+                <div class="room-info">
+                    <h3>Family Suite</h3>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Spacious suite with separate sleeping zones, family-friendly amenities, and evening turndown service.</p>
+                    <div class="room-features">
+                        <span><i class="fas fa-couch"></i> Living Area</span>
+                        <span><i class="fas fa-ruler-combined"></i> 80 m²</span>
+                        <span><i class="fas fa-tv"></i> Smart TV</span>
+                    </div>
+                    <div class="room-price">
+                        <div class="price">$449<span>/night</span></div>
+                        <button class="book-room-btn" onclick="openBookingModal('Family Suite', 449)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card reveal">
+                <div class="room-img">
+                    <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Skyline Room">
+                    <span class="room-badge" style="background: #c9a96e;">City View</span>
+                </div>
+                <div class="room-info">
+                    <h3>Skyline Room</h3>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">A stunning room with floor-to-ceiling windows offering panoramic city skyline views.</p>
+                    <div class="room-features">
+                        <span><i class="fas fa-city"></i> City View</span>
+                        <span><i class="fas fa-ruler-combined"></i> 50 m²</span>
+                        <span><i class="fas fa-wifi"></i> Free WiFi</span>
+                    </div>
+                    <div class="room-price">
+                        <div class="price">$359<span>/night</span></div>
+                        <button class="book-room-btn" onclick="openBookingModal('Skyline Room', 359)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card reveal">
+                <div class="room-img">
+                    <img src="https://images.unsplash.com/photo-1496417263034-38ec4f0b665a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Club Room">
+                    <span class="room-badge" style="background: #1a1a2e;">Club</span>
+                </div>
+                <div class="room-info">
+                    <h3>Club Room</h3>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">Elegant room with access to the private club lounge, complimentary refreshments, and premium amenities.</p>
+                    <div class="room-features">
+                        <span><i class="fas fa-glass-cheers"></i> Club Access</span>
+                        <span><i class="fas fa-ruler-combined"></i> 60 m²</span>
+                        <span><i class="fas fa-hot-tub"></i> Spa Access</span>
+                    </div>
+                    <div class="room-price">
+                        <div class="price">$429<span>/night</span></div>
+                        <button class="book-room-btn" onclick="openBookingModal('Club Room', 429)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="room-card reveal">
+                <div class="room-img">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Royal Suite">
+                    <span class="room-badge" style="background: #c9a96e;">Royal</span>
+                </div>
+                <div class="room-info">
+                    <h3>Royal Suite</h3>
+                    <p style="color: var(--text-light); font-size: 0.95rem; line-height: 1.6;">A majestic suite with elegant finishes, spacious living area, and premium service to match your regal stay.</p>
+                    <div class="room-features">
+                        <span><i class="fas fa-crown"></i> Royal Service</span>
+                        <span><i class="fas fa-ruler-combined"></i> 95 m²</span>
+                        <span><i class="fas fa-glass-cheers"></i> Welcome Champagne</span>
+                    </div>
+                    <div class="room-price">
+                        <div class="price">$559<span>/night</span></div>
+                        <button class="book-room-btn" onclick="openBookingModal('Royal Suite', 559)">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-header reveal">
+            <div class="gold-line"></div>
+            <h2>Signature Hotel Services</h2>
+            <p>Discover the full range of luxury services designed to elevate every moment of your stay.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal" id="room-service">
+                <div class="service-img">
+                    <img src="db9ff01a6698340cfcf500972ca99894.jpg" alt="Room Service">
+                </div>
+                <h3>Room Service</h3>
+                <p>Enjoy gourmet meals, midnight snacks, and refreshing beverages delivered directly to your suite any time of day.</p>
+            </div>
+            <div class="service-card reveal" id="spa-wellness">
+                <div class="service-img">
+                    <img src="12eba4003ab6a97f19a7d229fc3c733e.jpg" alt="Spa and Wellness">
+                </div>
+                <h3>Spa & Wellness</h3>
+                <p>Relax with bespoke massages, revitalizing facials, and wellness treatments in our serene spa sanctuary.</p>
+            </div>
+            <div class="service-card reveal" id="fine-dining">
+                <div class="service-img">
+                    <img src="ebc77fcedbd0471b643871d5d321b899.jpg" alt="Fine Dining">
+                </div>
+                <h3>Fine Dining</h3>
+                <p>Experience a culinary journey with exquisitely crafted menus and world-class wines in elegant dining spaces.</p>
+            </div>
+            <div class="service-card reveal" id="events-weddings">
+                <div class="service-img">
+                    <img src="videoframe_10434.png" alt="Events and Weddings">
+                </div>
+                <h3>Events & Weddings</h3>
+                <p>Host unforgettable celebrations with tailored event planning, stylish venues, and impeccable service.</p>
+            </div>
+            <div class="service-card reveal" id="business-center">
+                <div class="service-img">
+                    <img src="9bd195fc8d3461f4c556bff07a42e350.jpg" alt="Business Center">
+                </div>
+                <h3>Business Center</h3>
+                <p>Stay productive with our fully equipped business center, high-speed internet, and private meeting spaces.</p>
+            </div>
+            <div class="service-card reveal" id="concierge-services">
+                <div class="service-img">
+                    <img src="8535cd9c3fb249ffebdb45379b878949.jpg" alt="Concierge Services">
+                </div>
+                <h3>Concierge Services</h3>
+                <p>Our concierge team is on hand 24/7 to reserve tables, arrange tours, and create personalized itineraries.</p>
+            </div>
+            <div class="service-card reveal" id="fitness-pool">
+                <div class="service-img">
+                    <img src="9b9315e7338609428577556ed319425e.jpg" alt="Fitness & Pool">
+                </div>
+                <h3>Fitness & Pool</h3>
+                <p>Maintain your routine in our state-of-the-art fitness center or unwind in the heated indoor pool and sauna.</p>
+            </div>
+            <div class="service-card reveal" id="airport-transfers">
+                <div class="service-img">
+                    <img src="573c294a36639785a73bb471da46d9de.jpg" alt="Airport Transfers">
+                </div>
+                <h3>Airport Transfers</h3>
+                <p>Enjoy seamless travel with private airport transfers and luxury chauffeur service for arrival and departure.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section class="amenities" id="amenities">
+        <div class="section-header reveal">
+            <div class="gold-line"></div>
+            <h2>World-Class Amenities</h2>
+            <p>Indulge in our exceptional facilities designed to elevate your stay to new heights of comfort and relaxation.</p>
+        </div>
+        <div class="amenities-grid">
+            <div class="amenity-card reveal">
+                <div class="amenity-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>Fine Dining</h3>
+                <p>Experience culinary excellence at our award-winning restaurants featuring world-class chefs.</p>
+            </div>
+            <div class="amenity-card reveal">
+                <div class="amenity-icon">
+                    <i class="fas fa-spa"></i>
+                </div>
+                <h3>Luxury Spa</h3>
+                <p>Rejuvenate your senses with our premium spa treatments and wellness therapies.</p>
+            </div>
+            <div class="amenity-card reveal">
+                <div class="amenity-icon">
+                    <i class="fas fa-swimming-pool"></i>
+                </div>
+                <h3>Infinity Pool</h3>
+                <p>Take a refreshing dip in our stunning infinity pool with panoramic city views.</p>
+            </div>
+            <div class="amenity-card reveal">
+                <div class="amenity-icon">
+                    <i class="fas fa-dumbbell"></i>
+                </div>
+                <h3>Fitness Center</h3>
+                <p>State-of-the-art gym equipment and personal trainers to keep you in shape.</p>
+            </div>
+            <div class="amenity-card reveal">
+                <div class="amenity-icon">
+                    <i class="fas fa-glass-cheers"></i>
+                </div>
+                <h3>Rooftop Bar</h3>
+                <p>Sip handcrafted cocktails while enjoying breathtaking sunset views from our rooftop.</p>
+            </div>
+            <div class="amenity-card reveal">
+                <div class="amenity-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <h3>Valet Parking</h3>
+                <p>Complimentary valet parking service for all our valued guests during their stay.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="section-header reveal">
+            <div class="gold-line"></div>
+            <h2>Guest Reviews</h2>
+            <p>See what our guests have to say about their unforgettable experiences at Lumina Grand.</p>
+        </div>
+        <div class="testimonials-slider reveal">
+            <div class="testimonial-card active">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Sarah Johnson">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"An absolutely magical experience! The Presidential Suite exceeded all expectations. The staff went above and beyond to make our anniversary special. We will definitely be returning!"</p>
+                <h4>Sarah Johnson</h4>
+                <span>New York, USA</span>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Michael Chen">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"The attention to detail is remarkable. From the moment we arrived, every need was anticipated. The spa treatments were heavenly and the dining experience was world-class."</p>
+                <h4>Michael Chen</h4>
+                <span>Singapore</span>
+            </div>
+            <div class="testimonial-card">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Emma Williams">
+                <div class="stars">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>"Perfect for business and leisure. The conference facilities are top-notch, and the location is ideal. The rooftop bar has become my favorite spot in the city."</p>
+                <h4>Emma Williams</h4>
+                <span>London, UK</span>
+            </div>
+            <div class="slider-dots">
+                <span class="dot active" onclick="showTestimonial(0)"></span>
+                <span class="dot" onclick="showTestimonial(1)"></span>
+                <span class="dot" onclick="showTestimonial(2)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery" id="gallery">
+        <div class="section-header reveal" style="padding: 0 5%;">
+            <div class="gold-line"></div>
+            <h2>Our Gallery</h2>
+            <p>Take a visual journey through our stunning property and discover the beauty that awaits you.</p>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Hotel Exterior">
+                <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Pool Area">
+                <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Restaurant">
+                <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Room Interior">
+                <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+            </div>
+            <div class="gallery-item reveal">
+                <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Lobby">
+                <div class="gallery-overlay"><i class="fas fa-expand"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-grid">
+            <div class="contact-info reveal">
+                <div class="gold-line" style="margin: 0 0 20px 0;"></div>
+                <h3>Get In Touch</h3>
+                <p>Have questions or special requests? Our team is here to help you plan the perfect stay. Reach out to us anytime.</p>
+                
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <span>123 Luxury Avenue, Manhattan<br>New York, NY 10001</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>Phone</h4>
+                        <span>+1 (555) 123-4567<br>+1 (555) 987-6543</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <span>reservations@luminagrand.com<br>info@luminagrand.com</span>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Working Hours</h4>
+                        <span>24/7 Front Desk<br>Concierge: 6 AM - 11 PM</span>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form reveal">
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 25px;">Send a Message</h3>
+                <form id="contactForm" action="https://formspree.io/f/mlgklonz" method="POST">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" name="subject" placeholder="Booking Inquiry" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" placeholder="Tell us about your requirements..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <i class="fas fa-gem"></i>
+                    Lumina Grand
+                </a>
+                <p>Experience the pinnacle of luxury hospitality. Where every moment is crafted to perfection and every guest is treated like royalty.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#rooms">Rooms & Suites</a></li>
+                    <li><a href="#amenities">Amenities</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Room Service</a></li>
+                    <li><a href="#">Spa & Wellness</a></li>
+                    <li><a href="#">Fine Dining</a></li>
+                    <li><a href="#">Events & Weddings</a></li>
+                    <li><a href="#">Business Center</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cancellation Policy</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p> Lumina Grand Hotel. All rights reserved. Designed with luxury in mind.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal">
+            <button class="modal-close" onclick="closeBookingModal()">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3>Book Your Stay</h3>
+            <p id="modalRoomInfo">Complete your reservation below</p>
+            <form id="bookingForm" action="https://formspree.io/f/mlgklonz" method="POST">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" placeholder="Your full name" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="tel" name="phone" placeholder="+1 (555) 000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-in Date</label>
+                    <input type="date" name="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-out Date</label>
+                    <input type="date" name="checkout" required>
+                </div>
+                <div class="form-group">
+                    <label>Special Requests</label>
+                    <textarea name="message" placeholder="Any special requirements..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn" style="margin-top: 10px;">
+                    <i class="fas fa-check-circle"></i> Confirm Booking
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Action completed successfully!</span>
+    </div>
+<script src="script.js" ></script>
+</body>
+</html>
